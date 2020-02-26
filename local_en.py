@@ -10,3 +10,4 @@ MENU = '''1. Browse the catalog
 7.Exit  the program '''
 CHOICE = 'Select a menu item: '
 ERROR_1 = 'Error. Please type a number from 1 to 7.'
+EXIT = 'Program completed.'

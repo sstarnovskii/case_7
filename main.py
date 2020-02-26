@@ -15,7 +15,7 @@ else:
     import local_ru as lc
 
 
-# TODO: write functions: main(), accept_command(),run_command() - Sergey
+# TODO: write functions: main(), accept_command(), run_command(), view_dir(), add localization - Sergey
 
 
 def main():
@@ -23,6 +23,10 @@ def main():
         print(os.getcwd())
         print(lc.MENU)
         command = accept_command()
+        run_command(command)
+        if command == 'exit':
+            print(lc.EXIT)
+            break
 
 
 def accept_command():
@@ -32,7 +36,7 @@ def accept_command():
         print(lc.ERROR_1)
         command = input(lc.CHOICE)
     if command == '1':
-        return 'open_dir'
+        return 'view_dir'
     elif command == '2':
         return 'move_up'
     elif command == '3':
@@ -47,7 +51,24 @@ def accept_command():
         return 'exit'
 
 
-def open_dir():
+def run_command(command):
+    if command == 'view_dir':
+        view_dir()
+    elif command == 'move_up':
+        move_up()
+    elif command == 'move_down':
+        move_down()
+    elif command == 'count_files':
+        count_files()
+    elif command == 'count_bytes':
+        count_bytes()
+    elif command == 'find_files':
+        find_files()
+    elif command == 'exit':
+        pass
+
+
+def view_dir():
     return
 
 
