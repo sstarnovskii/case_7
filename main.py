@@ -56,6 +56,9 @@ def run_command(command):
         view_dir()
     elif command == 'move_up':
         move_up()
+
+# TODO: make argument calls for your functions. - Nikita, Alexander
+
     elif command == 'move_down':
         move_down()
     elif command == 'count_files':
@@ -69,10 +72,16 @@ def run_command(command):
 
 
 def view_dir():
+    dir_name = os.getcwd()
+    names = os.listdir(dir_name)
+    for name in names:
+        fullname = os.path.join(dir_name, name)
+        if os.path.isfile(fullname):
+            print(fullname)
     return
 
 
-# TODO: write functions: move_up(), move_down(currentDir), count_files(path) - Alexander
+# TODO: write functions: move_up(), move_down(current_dir), count_files(path) - Alexander
 
 def move_up():
     return
@@ -94,3 +103,5 @@ def count_bytes(path):
 
 def find_files(target, path):
     return
+
+main()
